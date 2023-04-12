@@ -16,6 +16,10 @@ Gem::Specification.new do |spec|
     f.match(%r!^(assets|_(includes|layouts|sass)/|(LICENSE|README)((\.(txt|md|markdown)|$)))!i)
   end
 
+  # Temporary fix for build error with Jekyll 4:
+  # "sass-embedded-1.62.0-x86_64-linux-musl requires rubygems version >= 3.3.22"
+  spec.add_runtime_dependency "rubygems-update", ">= 3.3.22", "< 4.0"
+
   spec.add_runtime_dependency "jekyll", ">= 3.5", "< 5.0"
   spec.add_runtime_dependency "jekyll-feed", "~> 0.9"
   spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.1"
